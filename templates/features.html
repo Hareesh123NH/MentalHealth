@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support Platform</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/features.css" %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">MindInsight</a>
+            <div class="nav-links">
+                <a href="{% url "home" %}">Home</a>
+                <a href="{% url "features" %}">Features</a>
+                <a href="{% url "about" %}">AboutUs</a>
+                {% comment %} <a href="{{url_for('main.login')}}" class="btn" style="background-color: #fff; color: #0056b3;">Login</a>
+                <a href="#user-dashboard" class="profile-icon" onclick="toggleSidebar()">
+                    <i class="fas fa-user"></i> <!-- Font Awesome profile icon -->
+                </a> {% endcomment %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="user-dashboard">
+        <button class="close-btn" onclick="toggleSidebar()">x</button>
+        <h2>User Dashboard</h2>
+        <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features mb-3">
+        <div class="container">
+            <h2 style = "padding-top : 150px;">Our Features</h2>
+            <p>At MindInsight, we are dedicated to revolutionizing mental health support with cutting-edge technology and personalized care. Our comprehensive range of services is designed to meet your unique needs and empower you to take charge of your mental wellbeing. Explore how MindPal can support you on your journey to a healthier, happier you.</p>
+            <div class="features-grid">
+                <div class="feature-item pb-2">
+                    <h3>24/7 AI-Powered Chatbot Support</h3>
+                    <p>Our intelligent chatbots are available around the clock to offer immediate, empathetic assistance. Whether you need a quick check-in, guidance through a tough moment, or general information about mental health, our chatbots are here to provide reliable support and help you navigate your emotions.</p>
+                </div>
+                <div class="feature-item pb-2">
+                    <h3>Mood Tracking and Emotional Insights</h3>
+                    <p>Monitor your emotional states over time with our intuitive mood-tracking features. By recording your feelings and experiences, you can gain valuable insights into your mental health patterns. Our predictive analytics will identify trends and provide actionable recommendations to help you manage and improve your emotional wellbeing.</p>
+                </div>
+                
+                <div class="feature-item pb-2">
+                    <h3>Personalized Content and Resources</h3>
+                    <p>Using advanced machine learning algorithms, MindPal curates content that is specifically tailored to your interests, mood, and mental health goals. From insightful articles and expert advice to engaging videos and self-help tools, our platform ensures that you receive the most relevant and useful information to support your journey.</p>
+                </div>
+                <div class="feature-item pb-2">
+                    <h3>Guided Meditation and Mindfulness Practices</h3>
+                    <p>Explore our wide range of guided meditations and mindfulness exercises designed to reduce stress, enhance focus, and promote relaxation. Whether you're a beginner or an experienced practitioner, our tailored meditation sessions will help you cultivate a sense of calm and balance in your daily life.</p>
+                </div>
+                
+                <div class="feature-item pb-2">
+                    <h3>Stress Management Tools</h3>
+                    <p>Easily connect with certified mental health professionals through our platform. Whether you need advice from a therapist, counselor, or coach, MindPal facilitates seamless access to expert support. Schedule consultations, attend virtual sessions, and receive guidance from trusted professionals.</p>
+                </div>
+
+                <div class="feature-item pb-2">
+                    <h3>Professional Connections</h3>
+                    <p>Take control of stress with our comprehensive stress management tools. From interactive stress-relief exercises and breathing techniques to practical strategies for coping with everyday challenges, MindPal offers a variety of resources to help you manage and reduce stress effectively.</p>
+                </div>
+
+                <div class="feature-item pb-2">
+                    <h3>Predictive Analytics and Optimization</h3>
+                    <p>Our advanced predictive analytics technology continuously analyzes your data to identify trends and optimize your experience. By understanding your evolving needs, MindPal adapts and refines its services to ensure that you receive the most effective and relevant support.</p>
+                </div>
+
+                <div class="feature-item pb-2">
+                    <h3>Multi-Platform Accessibility</h3>
+                    <p>Access MindPal's services anytime, anywhere, on any device. Our user-friendly interface is compatible with various platforms, ensuring that you can easily engage with your mental health resources whether you’re at home, at work, or on the go.</p>
+                </div>
+
+                <div class="feature-item pb-2">
+                    <h3>Commitment to Prevention and Self-Care</h3>
+                    <p>At MindPal, our mission is to prevent mental health issues and foster a culture of self-care and wellness. By offering accessible, continuous support, we help you build resilience, enhance your quality of life, and maintain a positive mindset.</p>
+                </div>
+            </div>
+            <p>Explore all that MindPal has to offer and take the first step towards a more balanced and fulfilling life. Our team is here to support you every step of the way. For more information about our services or to get started with MindPal, contact us today!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-head row">
+          <div class="col-md-5 col-12 d-flex gap-3">
+            <i class="fa-solid fa-envelope" style="font-size: 35px;"></i>
+            <h4>Subscribe for the weekly News letter</h4>
+          </div>
+          <div class="col-md-7 col-12 d-flex gap-3 justify-content-center">
+            <div>
+              <input type="email" placeholder="Email Address"/>
+              <button type="button">Subscribe</button>
+            </div>
+            
+              <span class=" social-media-icon"><i class="fa-brands fa-facebook"></i></span>
+              <span class=" social-media-icon"><i class="fa-brands fa-twitter"></i></span>
+              <span class=" social-media-icon"><i class="fa-brands fa-instagram"></i></span>
+              <span class=" social-media-icon"><i class="fa-brands fa-youtube"></i></span>
+            
+          </div>
+        </div>
+        <hr/>
+        <div class="footer-links container">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="question d-flex gap-3">
+                <i class="fa-solid fa-headset " style="font-size: 35px; color: white;"></i>
+                <div>
+                  <h6>Got question? Call Us 24/7!</h6>
+                  <h6>(+01) 123 4567 89</h6>
+                  <div class="d-flex">
+                    <p style="color:white;">Address:</p>
+                    <p class="info-links">507-Union Trade ipsum Doler center ,Ring Road,California</p>
+                  </div>
+                  <div class="d-flex">
+                    <p style="color:white;">Email:</p>
+                    <p class="info-links">info@rose.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-2 ">
+              <h6>Categories</h6>
+              <p class="info-links">Search</p>
+              <p class="info-links">Gallery</p>
+              <p class="info-links">Contact us</p>
+              <p class="info-links">FAQ's</p>
+              <p class="info-links">Sitemap</p>
+            </div>
+            <div class="col-12 col-md-2">
+              <h6>Information</h6>
+              <p class="info-links">Delivery</p>
+              <p class="info-links">Privacy</p>
+              <p class="info-links">About us</p>
+              <p class="info-links">Payments</p>
+              <p class="info-links">Stores</p>
+            </div>
+          <div class=" col-12 col-md-4">
+            <h6>Information</h6>
+            <p class="info-links">Delivery</p>
+            <p class="info-links">Privacy</p>
+            <p class="info-links">About us</p>
+            <p class="info-links">Payments</p>
+            <p class="info-links">Stores</p>
+          </div>
+        </div>
+        <p class="text-center info-links" style="margin-top: 20px;">&copy; 2022 Designed by <span style="color:white;">MindInsight</span> </p>
+      </div>
+      <!--footersection-->
+  
+
+    <!-- JavaScript -->
+    <script src="{% static "js/features.js" %}"></script>
+</body>
+</html>

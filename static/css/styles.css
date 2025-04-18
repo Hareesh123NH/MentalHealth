@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #e0f7fa;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.dashboard, .mood-analysis {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+canvas {
+    width: 65%;
+    max-width: 700px;
+    margin: auto;
+    display: block;
+}
+.mood-chart{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

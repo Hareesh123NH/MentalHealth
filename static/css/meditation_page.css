@@ -1,0 +1,127 @@
+.container{
+    background-color: antiquewhite;
+    height: 250vh;
+    padding: 10px;
+}
+*{
+    margin: 0;
+    
+}
+.meditation-head{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(47, 106, 216);
+}
+.meditation-para{
+    font-size: 25px;
+    color:darksalmon;
+    font-weight: bold;
+}
+
+.list{
+    padding: 7px;
+    margin-left: 40px;
+    font-size: 22px;
+}
+h1 {
+    color: #f37700;
+    text-align:center;
+    font-size:50px;
+}
+
+.h2 {
+    color: #d98cb9;
+    margin-top: 20px;
+    
+}
+.para{
+		margin: 30px;
+		font-weight:bold;
+}
+.label-style{
+
+	font-weight:bold;
+}
+.breathing-section, .timer-section, .mood-section, .tip-section, .music-section {
+    margin: 20px 0;
+}
+.flex{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+}
+
+
+.flex1{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin: 20px auto;
+    transform: scale(1);
+    transition: transform 4s ease-in-out;
+}
+
+.mood-buttons button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: #333;
+}
+
+.mood-buttons button:hover {
+    background-color: #bbb;
+}
+
+#timerDisplay {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+#healthTip {
+    font-style: italic;
+    font-size: 1.2em;
+    margin-top:20px;
+}
+
+.btn {
+    background-color: #67cfd6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top:20px;
+    margin-right:30px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.music-section button {
+    margin: 10px;
+}
+#moodResponse{
+	padding: 20px;
+}
+.btn1{
+ 	background-image: linear-gradient(to right, #e858d5, #2dfecf,#f7ff17);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight:bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top:20px;
+    margin-right:30px;
+}

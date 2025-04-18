@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-container {
+            background-color: #ffffff;
+        }
+
+        .review-slide {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .review-slide img {
+            width: 90%;
+            height: 70vh;
+            margin-top: 3%;
+        }
+
+        .about-container {
+            background-color: #0056b3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .head {
+            color: #ffffff;
+            font-family: "Bree Serif";
+            padding: 20px;
+            height: 100px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content-head {
+            color: #046ed6;
+            font-family: "Bree Serif";
+        }
+
+        .para {
+            color: darkgray;
+            font-weight: bold;
+        }
+
+
+        .footer {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .footer-head {
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-bottom: 20px;
+        }
+
+        .social-media-icon {
+            font-size: 20px;
+            background-color: white;
+            color: #0056b3;
+            padding: 9px 13px 9px 13px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .footer-head input {
+            padding: 8px;
+        }
+
+        .footer-head button {
+            background-color: white;
+            color: #0056b3;
+            border: none;
+            padding: 8px;
+        }
+
+        .footer-head h4 {
+            font-family: "Playfair Display", serif;
+        }
+
+        .footer-links {
+            padding: 20px 0px;
+        }
+
+        .footer-links h6 {
+            margin-bottom: 20px;
+        }
+
+        .info-links {
+            color: white;
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+    <div class="container">
+        <a href="#" class="brand">MindInsight</a>
+         <div class="nav-links">
+            <a href="{% url "home" %}">Home</a>
+            <a href="{% url "features" %}">Features</a>
+            <a href="{% url "about" %}">AboutUs</a>
+            {% comment %} <a href="{{url_for('main.login')}}" class="btn" style="background-color: #fff; color: #0056b3;">Login</a>
+            <a href="#user-dashboard" class="profile-icon" onclick="toggleSidebar()">
+                <i class="fas fa-user"></i> <!-- Font Awesome profile icon -->
+            </a> {% endcomment %}
+        </div>
+    </div>
+    </nav>
+    <div class="container top-container">
+        <div class="about-container">
+            <h1 class="head">About Us</h1>
+        </div>
+        <div class="slider">
+            <div id="reviewCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="review-slide">
+                            <img src="https://img.freepik.com/free-photo/graphic-designers-meeting_1170-2002.jpg?ga=GA1.1.201029919.1684496178&semt=ais_hybrid"
+                                alt="Reviewer 1">
+
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="review-slide">
+                            <img src="https://img.freepik.com/free-photo/cheerful-workers-watching-laptop_23-2147577254.jpg?ga=GA1.1.201029919.1684496178&semt=ais_hybrid"
+                                alt="Reviewer 2">
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="review-slide">
+                            <img src="https://img.freepik.com/free-photo/business-people-having-discussion-meeting_1153-3938.jpg?ga=GA1.1.201029919.1684496178&semt=ais_hybrid"
+                                alt="Reviewer 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex">
+                    <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span><br>
+                    </a>
+                    <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="content-head">Who We Are</h1>
+            <p class="para">
+                At MindInsight, we are a team of passionate individuals committed to transforming the way people
+                approach mental health.
+                Our mission is to create an inclusive, supportive platform that leverages the power of technology to
+                provide personalized
+                mental health support to people everywhere.
+            </p>
+            <p class="para">
+                We understand that mental well-being is a journey, and no two individuals experience it in the same way.
+                That's why we combine innovative AI technology with human empathy to offer a holistic approach to mental
+                health.
+                Whether you need someone to talk to, professional guidance, or simple tools to manage daily stress,
+                MindInsight is here to help.
+            </p>
+            <p class="para">
+                Our platform empowers users to take control of their mental well-being through tools like AI-driven
+                chatbots,
+                mood tracking, personalized content, and access to professional support. We believe that everyone
+                deserves to feel heard,
+                supported, and equipped to live a mentally healthy life, no matter where they are.
+            </p>
+            <p class="para">
+                With MindInsight, you're never alone on your mental health journey. We are here to listen, support, and
+                guide you every step of the way.
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-head row">
+            <div class="col-md-5 col-12 d-flex gap-3">
+                <i class="fa-solid fa-envelope" style="font-size: 35px;"></i>
+                <h4>Subscribe for the weekly News letter</h4>
+            </div>
+            <div class="col-md-7 col-12 d-flex gap-3 justify-content-center">
+                <div>
+                    <input type="email" placeholder="Email Address" />
+                    <button type="button" class="m-2">Subscribe</button>
+                </div>
+
+                <span class="social-media-icon"><i class="fa-brands fa-facebook"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-twitter"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-instagram"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-youtube"></i></span>
+
+            </div>
+        </div>
+
+        <hr />
+        <div class="footer-links container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="question d-flex gap-3">
+                        <i class="fa-solid fa-headset " style="font-size: 35px; color: white;"></i>
+                        <div>
+                            <h6>Got question? Call Us 24/7!</h6>
+                            <h6>(+01) 123 4567 89</h6>
+                            <div class="d-flex">
+                                <p style="color:white;">Address:</p>
+                                <p class="info-links">507-Union Trade ipsum Doler center ,Ring Road,California</p>
+                            </div>
+                            <div class="d-flex">
+                                <p style="color:white;">Email:</p>
+                                <p class="info-links">info@MindInsight.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 ">
+                    <h6>Categories</h6>
+                    <p class="info-links">Search</p>
+                    <p class="info-links">Gallery</p>
+                    <p class="info-links">Contact us</p>
+                    <p class="info-links">FAQ's</p>
+                    <p class="info-links">Sitemap</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <h6>Information</h6>
+                    <p class="info-links">Delivery</p>
+                    <p class="info-links">Privacy</p>
+                    <p class="info-links">About us</p>
+                    <p class="info-links">Payments</p>
+                    <p class="info-links">Stores</p>
+                </div>
+                <div class=" col-12 col-md-4">
+                    <h6>Information</h6>
+                    <p class="info-links">Delivery</p>
+                    <p class="info-links">Privacy</p>
+                    <p class="info-links">About us</p>
+                    <p class="info-links">Payments</p>
+                    <p class="info-links">Stores</p>
+                </div>
+            </div>
+            <p class="text-center info-links" style="margin-top: 20px;">&copy; 2022 Designed by <span
+                    style="color:white;">MindInsight</span> </p>
+        </div>
+        <!--footersection-->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

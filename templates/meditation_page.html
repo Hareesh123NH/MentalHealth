@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediation Page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/meditation_page.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="meditation-head">Alternate nostril breathing</h1>
+        <p class="meditation-para">Alternate nostril breathing, known as Nadi Shodhana, is a yoga breathing technique that can lower blood pressure Trusted Source and improve attention.</p>
+        <p class="meditation-para" style="text-decoration: underline;">Steps to follow the breathing process:</p>
+        <ol class="meditation-list">
+            <li class="list">In a seated position, place the left hand on the left knee.</li>
+            <li class="list">Inhale and exhale to begin.</li>
+            <li class="list">Lift the right hand toward the nose.</li>
+            <li class="list">Bend the point and middle fingers to the palm, leaving the thumb, ring finger, and little finger extended.</li>
+            <li class="list">Using the thumb of the right hand, close the right nostril.</li>
+            <li class="list">Inhale through the left nostril.</li>
+            <li class="list">Close the left nostril with the ring finger.</li>
+            <li class="list">Release the right nostril and exhale.</li>
+            <li class="list">Inhale through your right nostril.</li>
+            <li class="list">Close off the right nostril with the thumb.</li>
+            <li class="list">Release the left nostril and exhale.</li>
+        </ol>
+        <p class="list">Perform the breathing exercise in rounds of 10.</p>
+
+        <h1>Meditation Health Guide</h1>
+        <div class="flex">
+            <!-- Breathing Exercise Visualizer -->
+            <div>
+                <div class="breathing-section">
+                    <h2 class="h2">Breathing Exercise</h2>
+                    <p class="para">Follow the breathing pattern to relax your mind.</p>
+                    <div id="breathing-circle" class="circle"></div>
+                    <button id="startBreathing" class="btn">Start Breathing Exercise</button>
+                </div>
+
+                <!-- Custom Timer -->
+                <div class="timer-section">
+                    <h2>Custom Meditation Timer</h2>
+                    <label class="label-style" for="timer">Set timer (in minutes):</label>
+                    <input type="number" id="timerInput" min="1" max="60" placeholder="e.g. 5">
+                    <div class="flex1">
+                        <button id="startTimer" class="btn">Start Timer</button>
+                        <div id="timerDisplay">00:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <!-- Mood Tracker -->
+                <div class="mood-section p-3">
+                    <h2 class="h2">How Are You Feeling Today?</h2>
+                    <div class="mood-buttons">
+                        <button class="mood" data-mood="Happy">😊 Happy</button>
+                        <button class="mood" data-mood="Calm">😌 Calm</button><br>
+                        <button class="mood" data-mood="Stressed">😰 Stressed</button>
+                        <button class="mood" data-mood="Sad">😔 Sad</button>
+                    </div>
+                    <div id="moodResponse"></div>
+                </div>
+            </div>
+
+            <div>
+                <!-- Daily Health Tip -->
+                <div class="tip-section">
+                    <h2 class="h2">Daily Health Tip</h2>
+                    <div id="healthTip"></div>
+                </div>
+                <br>
+
+                <!-- Background Music Player -->
+                <div class="music-section">
+                    <h2 class="h2">Relaxing Background Music</h2>
+                    <button id="playMusic" class="btn1">Play Music</button>
+                    <button id="stopMusic" class="btn1">Stop Music</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'js/timer.js' %}"></script>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'slider' %}"><button class="btn btn-primary">Back</button></a>
+        </div>
+    </div>
+</body>
+</html>

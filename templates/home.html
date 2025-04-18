@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <p class="logo">Welcome</p>
+
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="user-btn" class="fas fa-right-from-bracket"></div>
+      </div>
+
+      <div class="profile">
+         <form action="{{url_for('main.logout')}}">
+         	<button type="submit" class="btn" style="background-color:#0056b3;color:white">Log Out</button>
+      	</form>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      {% if userpersonal.gender == "male"%}
+         <img src="{{url_for('static',filename='images/pic-1.jpg')}}" class="image" alt="">
+      {%else%}
+         <img src="{{url_for('static',filename='images/pic-7.jpg')}}" class="image" alt="">
+      {%endif%}
+      <h3 class="name">{{user.name}}</h3>
+      <p class="role">student</p>
+      <!-- <a href="profile.php" class="btn">view profile</a> -->
+   </div>
+
+   <nav class="navbar">
+      <a href="{{url_for('main.home')}}"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#"><i class="fas fa-book"></i><span>MoodTracker</span></a>
+      <a href="{{url_for('main.features')}}"><i class="fas fa-graduation-cap"></i><span>Features</span></a>
+      <a href="{{url_for('main.about')}}"><i class="fas fa-chalkboard-user"></i><span>AboutUs</span></a>
+      <a href="{{url_for('main.home')}}"><i class="fas fa-headset"></i><span>Guided Meditation</span></a>
+   </nav>
+
+</div>
+
+<section class="home-grid">
+
+   <h1 class="heading">Personal Detailes</h1>
+   <div class="personalInfo">
+      <p class="label">Name:</p>
+      <p class="value" style="text-transform: capitalize;">{{user.name}}</p>
+   </div>
+   <div class="personalInfo">
+      <p class="label">Email:</p>
+      <p class="value">{{user.email}}</p>
+   </div>
+   <div class="personalInfo">
+      <p class="label">Age:</p>
+      <p class="value">{{userpersonal.age}}</p>
+   </div>
+   <div class="personalInfo">
+      <p class="label">Gender:</p>
+      <p class="value" style="text-transform: capitalize;">{{userpersonal.gender}}</p>
+   </div>
+   <div class="personalInfo">
+      <p class="label">Location:</p>
+      <p class="value" style="text-transform: capitalize;">{{userpersonal.location}}</p>
+   </div>
+   <div class="personalInfo">
+      <p class="label">Contact Number:</p>
+      <p class="value">{{userpersonal.contact}}</p>
+   </div>
+<section>        
+<!-- custom js file link  -->
+<script src="{{url_for('static',filename='js/script1.js')}}"></script>
+
+   
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Analysis Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/recom_index.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="brand">MindInsight</a>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'features' %}">Features</a>
+            <a href="{% url 'about' %}">AboutUs</a>
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<section class="mood-analysis">
+    <h2 style="padding-top: 100px;">Mood Analysis Dashboard</h2>
+    <canvas id="moodChart"></canvas>
+    <div class="recommendations">
+        <h3>Recommendations</h3>
+        <ul id="recommendations-list">
+            <!-- Dynamic content will be added here -->
+        </ul>
+    </div>
+</section>
+
+<div class="container style">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="card-container">
+                <div class="card-inner-container">
+                    <img src="https://img.freepik.com/free-photo/portrait-person-practicing-yoga-beach-sunset_23-2151046782.jpg" style="width:320px" class="card-pic" />
+                    <div class="card-body-container">
+                        <h1 class="card-head" style="font-size:25px;">Effective Strategies for Reducing Anxiety</h1>
+                        <p class="card-para">Meditation is the practice of focusing the mind to achieve mental clarity, emotional calm, and a deep sense of inner peace.</p>
+                        <a href="{% url 'slider' %}"><button class="btn btn-primary">Read More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card-container">
+                <div class="card-inner-container">
+                    <img src="https://img.freepik.com/free-vector/sharing-articles-concept-illustration_114360-5437.jpg" class="card-pic" />
+                    <div class="card-body-container">
+                        <h1 class="card-head">Articles</h1>
+                        <p class="card-para">Articles are written pieces that convey information, opinions, or analysis on a specific topic.</p>
+                        <a href="{% url 'articles' %}"><button class="btn btn-primary">Read More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card-container">
+                <div class="card-inner-container">
+                    <img src="https://img.freepik.com/free-photo/collection-cubes-with-games-title_23-2148030957.jpg" class="card-pic" />
+                    <div class="card-body-container">
+                        <h1 class="card-head">Games</h1>
+                        <p class="card-para">Games are structured forms of play or competition, often with rules and objectives, designed for entertainment or learning.</p>
+                        <a href="{% url 'game' %}"><button class="btn btn-primary">Read More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/data.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

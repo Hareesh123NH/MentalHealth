@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .get-started {
+            padding: 50px 0;
+            background-color: #e1ecf7;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 80% !important;
+            margin: auto !important;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #333;
+            text-shadow: 2px 2px 5px #aaa;
+            margin-bottom: 20px;
+        }
+
+        .category-heading {
+            color: #0056b3;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center !important;
+            color: #0056b3 !important;
+            margin-bottom: 30px !important;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="get-started">
+        <div class="container">
+            <h1 class="form-title">Mental Health Assessment Form</h1>
+            <form method="POST" action="{% url 'assessmentform' userId=userId %}">
+                {% csrf_token %}
+
+                <!-- Personal Info -->
+                <div class="category-heading">Personal Information</div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" name="age" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" name="location" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" class="form-control" name="contact" id="contact" required>
+                </div>
+
+                <!-- Emotional Well-Being -->
+                <div class="category-heading">Emotional Well-Being</div>
+                <div class="form-group">
+                    <label for="emotional_feeling">How have you been feeling emotionally over the past few weeks?</label>
+                    <input type="text" class="form-control" name="emotional_feeling" required>
+                </div>
+                <div class="form-group">
+                    <label for="feelings_sadness">Do you often experience feelings of sadness or hopelessness?</label>
+                    <input type="text" class="form-control" name="feelings_sadness" required>
+                </div>
+                <div class="form-group">
+                    <label for="emotional_triggers">Are there specific situations or triggers that make you feel anxious or stressed?</label>
+                    <input type="text" class="form-control" name="emotional_triggers" required>
+                </div>
+                <div class="form-group">
+                    <label for="happiness_level">How would you rate your current level of happiness on a scale of 1 to 10?</label>
+                    <input type="number" class="form-control" name="happiness_level" required>
+                </div>
+
+                <!-- Stress and Coping -->
+                <div class="category-heading">Stress and Coping</div>
+                <div class="form-group">
+                    <label for="stress_sources">What are the main sources of stress in your life right now?</label>
+                    <input type="text" class="form-control" name="stress_sources" required>
+                </div>
+                <div class="form-group">
+                    <label for="coping_methods">How do you typically cope with stress or difficult emotions?</label>
+                    <input type="text" class="form-control" name="coping_methods" required>
+                </div>
+                <div class="form-group">
+                    <label for="relax_activities">Have you found any activities or methods that help you relax or calm down?</label>
+                    <input type="text" class="form-control" name="relax_activities" required>
+                </div>
+                <div class="form-group">
+                    <label for="overwhelmed_feeling">Do you feel overwhelmed by your responsibilities or challenges?</label>
+                    <input type="text" class="form-control" name="overwhelmed_feeling" required>
+                </div>
+
+                <!-- Social Behavior -->
+                <div class="category-heading">Social Behavior</div>
+                <div class="form-group">
+                    <label for="social_comfort">Do you feel comfortable interacting with others, or do you prefer to be alone?</label>
+                    <input type="text" class="form-control" name="social_comfort" required>
+                </div>
+                <div class="form-group">
+                    <label for="time_with_others">How often do you spend time with friends or loved ones?</label>
+                    <input type="text" class="form-control" name="time_with_others" required>
+                </div>
+                <div class="form-group">
+                    <label for="social_support">Do you feel supported by the people around you?</label>
+                    <input type="text" class="form-control" name="social_support" required>
+                </div>
+                <div class="form-group">
+                    <label for="social_changes">Are there any recent changes in your social life that have affected your mood or behavior?</label>
+                    <input type="text" class="form-control" name="social_changes" required>
+                </div>
+
+                <!-- Personality Traits -->
+                <div class="category-heading">Personality Traits</div>
+                <div class="form-group">
+                    <label for="response_to_situations">How do you typically respond to new or challenging situations?</label>
+                    <input type="text" class="form-control" name="response_to_situations" required>
+                </div>
+                <div class="form-group">
+                    <label for="optimist_pessimist">Are you more of an optimist or a pessimist?</label>
+                    <input type="text" class="form-control" name="optimist_pessimist" required>
+                </div>
+                <div class="form-group">
+                    <label for="risk_taking">Do you enjoy taking risks, or do you prefer to play it safe?</label>
+                    <input type="text" class="form-control" name="risk_taking" required>
+                </div>
+                <div class="form-group">
+                    <label for="handling_criticism">How do you handle criticism or feedback from others?</label>
+                    <input type="text" class="form-control" name="handling_criticism" required>
+                </div>
+
+                <button type="submit" class="btn submit-btn mt-4">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

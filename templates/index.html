@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support Platform</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">MindInsight</a>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'features' %}">Features</a>
+                <a href="{% url 'about' %}">AboutUs</a>
+                <a href="#user-dashboard" class="profile-icon" onclick="toggleSidebar()">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="user-dashboard">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+        <br><br>
+        <h2 style="text-align:center">User Dashboard</h2>
+        <ul>
+            <li><a href="{% url 'analysis' %}">Analysis & Recommendations</a></li>
+            <li><a href="#">AI chatbot</a></li>
+            <li><a href="https://sih-health-986301354751.us-central1.run.app/">Mood Tracker</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 style="color: #0056b3">Your Mental Health Matters</h1>
+            <p style="color: #0056b3">AI-driven support for a healthier mind</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>AI Chatbot Support</h3>
+                    <p>Get instant support and advice from our AI-driven chatbot.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Mood Tracking</h3>
+                    <p>Track your mood and receive insights to help manage your emotions.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Personalized Content</h3>
+                    <p>Receive tailored advice, articles, and exercises to improve your mental health.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Meditation & Relaxation</h3>
+                    <p>Access guided meditations and exercises for stress management.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Professional Help</h3>
+                    <p>Connect with mental health professionals when you need extra support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <button class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-head row">
+            <div class="col-md-5 col-12 d-flex gap-3">
+                <i class="fa-solid fa-envelope" style="font-size: 35px;"></i>
+                <h4>Subscribe for the weekly Newsletter</h4>
+            </div>
+            <div class="col-md-7 col-12 d-flex gap-3 justify-content-center">
+                <div>
+                    <input type="email" placeholder="Email Address" />
+                    <button type="button">Subscribe</button>
+                </div>
+                <span class="social-media-icon"><i class="fa-brands fa-facebook"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-twitter"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-instagram"></i></span>
+                <span class="social-media-icon"><i class="fa-brands fa-youtube"></i></span>
+            </div>
+        </div>
+
+        <hr />
+        <div class="footer-links container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="question d-flex gap-3">
+                        <i class="fa-solid fa-headset" style="font-size: 35px; color: white;"></i>
+                        <div>
+                            <h6>Got question? Call Us 24/7!</h6>
+                            <h6>(+01) 123 4567 89</h6>
+                            <div class="d-flex">
+                                <p style="color:white;">Address:</p>
+                                <p class="info-links">507-Union Trade ipsum Doler center, Ring Road, California</p>
+                            </div>
+                            <div class="d-flex">
+                                <p style="color:white;">Email:</p>
+                                <p class="info-links">info@rose.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <h6>Categories</h6>
+                    <p class="info-links">Search</p>
+                    <p class="info-links">Gallery</p>
+                    <p class="info-links">Contact us</p>
+                    <p class="info-links">FAQ's</p>
+                    <p class="info-links">Sitemap</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <h6>Information</h6>
+                    <p class="info-links">Delivery</p>
+                    <p class="info-links">Privacy</p>
+                    <p class="info-links">About us</p>
+                    <p class="info-links">Payments</p>
+                    <p class="info-links">Stores</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h6>Information</h6>
+                    <p class="info-links">Delivery</p>
+                    <p class="info-links">Privacy</p>
+                    <p class="info-links">About us</p>
+                    <p class="info-links">Payments</p>
+                    <p class="info-links">Stores</p>
+                </div>
+            </div>
+            <p class="text-center info-links" style="margin-top: 20px;">&copy; 2022 Designed by <span style="color:white;">MindInsight</span></p>
+        </div>
+    </div>
+
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "ZLg6pSIXPcxxt_-KAfpez",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="ZLg6pSIXPcxxt_-KAfpez" domain="www.chatbase.co" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Slider with Hover Effect</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .total-container {
+            background-color: #ffffff;
+            height: 170vh;
+        }
+        .review-slide {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .review-slide img {
+            width: 90%;
+            height: 80vh;
+            margin-top: 3%;
+        }
+        .review-slide .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            opacity: 0;
+            width: 90%;
+            height: 80vh;
+            margin-top: 3%;
+            margin-left: 5%;
+            transition: opacity 1s ease;
+            text-align: center;
+        }
+        .review-slide:hover .content {
+            opacity: 1;
+        }
+        .review-slide .content h3 {
+            margin-top: 10px;
+        }
+        .review-slide .content p {
+            margin: 15px 0;
+        }
+        .flex {
+            display: flex;
+            flex-direction: row;
+        }
+        .para {
+            width: 60%;
+        }
+        .list-container {
+            padding: 5%;
+        }
+        .head {
+            color: #3e97f0;
+            font-family: "Bree Serif";
+        }
+        .list-style {
+            font-weight: bold;
+            font-size: 20px;
+            color: #3e97f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="total-container">
+    <div id="reviewCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="review-slide">
+                    <img src="https://img.freepik.com/free-photo/young-attractive-woman-making-alternate-nostril-breathing-studi_1163-2902.jpg?t=st=1726054923~exp=1726058523~hmac=fe0f04fe83c0c01aefc8c1235f6e7b34cce794f6472dd0cdbd0b8d6e835296aa&w=740" alt="Reviewer 1">
+                    <div class="content">
+                        <h3>Alternate Nostril Breathing</h3>
+                        <p class="para">"Alternate nostril breathing, known as Nadi Shodhana, is a yoga breathing technique that can lower blood pressure and improve attention."</p>
+                        <a href="{% url 'meditation' %}"><button class="btn btn-primary">Read More</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="review-slide">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-athlete-swimming-pool_23-2149028361.jpg" alt="Reviewer 2">
+                    <div class="content">
+                        <h3>Swimming</h3>
+                        <p class="para">"Swimming is a physical activity and sport that involves moving through water using coordinated body movements. It reduces anxiety by promoting endorphin release, calming the nervous system, and engaging the mind in meditative patterns."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="review-slide">
+                    <img src="https://img.freepik.com/free-photo/portrait-beautiful-young-sport-asian-woman-running-exercise-beach-near-sea-ocean-sunrise-sunset-time_74190-8570.jpg" alt="Reviewer 3">
+                    <div class="content">
+                        <h3>Exercise</h3>
+                        <p class="para">"Activities like running, cycling, or dancing can boost endorphin levels and improve mood."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex">
+            <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span><br>
+            </a>
+            <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <h3 class="head">Reducing anxiety can be achieved through a combination of lifestyle changes and mental health practices:</h3>
+        <ol>
+            <li><span class="list-style">Practice mindfulness and meditation:</span> Techniques like deep breathing, meditation, and grounding exercises help calm the mind.</li>
+            <li><span class="list-style">Maintain a balanced diet:</span> Foods rich in omega-3s and antioxidants can positively impact mood.</li>
+            <li><span class="list-style">Get enough sleep:</span> Sleep is vital for emotional regulation and stress reduction.</li>
+            <li><span class="list-style">Exercise regularly:</span> Physical activity helps release mood-enhancing endorphins.</li>
+            <li><span class="list-style">Connect with others:</span> Talking to people provides emotional relief and support.</li>
+            <li><span class="list-style">Engage in hobbies:</span> Hobbies serve as positive distractions and encourage relaxation.</li>
+        </ol>
+    </div>
+
+    <div class="text-center m-3">
+        <a href="{% url 'analysis' %}"><button class="btn btn-primary">Back</button></a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
